@@ -20,15 +20,20 @@ def main():
             if event.type == pg.QUIT: return
 
         x = tmr % 3200
+
         if tmr % 100 <= 50:
             num = 0
+        else:
+            num = 1
+
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg_img,[-x+3200,0])
         screen.blit(bg_imgs,[1600-x,0])
         screen.blit(cg_imgs[num],[300,200])
+
         pg.display.update()
         tmr += 1       
-        clock.tick(500)
+        clock.tick(100)
 
 if __name__ == "__main__":
     pg.init()
